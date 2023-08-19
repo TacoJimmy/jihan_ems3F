@@ -24,7 +24,7 @@ def Publish_IAQ():
         client.username_pw_set('NxoZPA62Q26fOam2pRJY','XXX')
         client.connect('thingsboard.cloud', 1883, 60)
         TimeStamp = Current_ms()
-        IAQ_Data = GetIAQ('/dev/ttyS1',2)
+        IAQ_Data = GetIAQ('/dev/ttyS1',1)
         if (IAQ_Data[0] != 0):
             payload_iaq = {"ts": TimeStamp,
                            "values":{"CO2":IAQ_Data[0],"PM2.5":IAQ_Data[1],"RH":IAQ_Data[2]/100,"Temp":IAQ_Data[3]/100}
