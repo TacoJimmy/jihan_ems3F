@@ -48,10 +48,11 @@ def GetIAQ(PORT,ID):
         IAQ_Data = [0,0,0,0]
         return (IAQ_Data)
 
-schedule.every(5).minutes.do(Publish_IAQ)
+#schedule.every(5).minutes.do(Publish_IAQ)
 
 if __name__ == '__main__':
     while True:
-        schedule.run_pending()
-        time.sleep(1)
+        #schedule.run_pending()
+        print(GetIAQ('/dev/ttyS1',1))
+        time.sleep(5)
     
