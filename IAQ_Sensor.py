@@ -53,6 +53,6 @@ def GetIAQ(PORT,ID):
 if __name__ == '__main__':
     while True:
         #schedule.run_pending()
-        print(Publish_IAQ())
+        print(GetIAQ('/dev/ttyS1',1))
         time.sleep(5)
     
