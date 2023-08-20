@@ -21,7 +21,7 @@ def Publish_IAQ():
     try:
         client = mqtt.Client()
         client.on_connect
-        client.username_pw_set('NxoZPA62Q26fOam2pRJY','XXX')
+        client.username_pw_set('DCRSNAj5xThxuNV5W3jQ','XXX')
         client.connect('thingsboard.cloud', 1883, 60)
         TimeStamp = Current_ms()
         IAQ_Data = GetIAQ('/dev/ttyS1',1)
