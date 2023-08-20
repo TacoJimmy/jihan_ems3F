@@ -18,11 +18,13 @@ import PowerMeter
 def Publish_IAQ():
     try:
         IAQ_Data = IAQ_Sensor.GetIAQ('/dev/ttyS1',1)
+        time.sleep(1)
+        TimeStamp = IAQ_Sensor.Current_ms()
         client = mqtt.Client()
         client.on_connect
         client.username_pw_set('DCRSNAj5xThxuNV5W3jQ','XXX')
         client.connect('thingsboard.cloud', 1883, 60)
-        TimeStamp = IAQ_Sensor.Current_ms()
+        
         
         if (IAQ_Data[0] != 0):
             payload_iaq = {"ts": TimeStamp,
